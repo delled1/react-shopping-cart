@@ -13,7 +13,9 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
+		setCart([...cart, item])
 	};
+	
 
 	return (
 		<div className="App">
@@ -23,6 +25,7 @@ function App() {
 			<Route exact path="/">
 				<Products products={products} addItem={addItem} />
 			</Route>
+			
 
 			<Route path="/cart">
 				<ShoppingCart cart={cart} />
